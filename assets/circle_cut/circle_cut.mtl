@@ -1,0 +1,23 @@
+{
+  "__type__": "cc.Material",
+  "_name": "circle_cut",
+  "_objFlags": 0,
+  "_native": "",
+  "_effectAsset": {
+    "__uuid__": "6fe5c204-11be-446e-adfd-10fdec4afc78"
+  },
+  "_techniqueIndex": 0,
+  "_techniqueData": {
+    "0": {
+      "defines": {
+        "USE_TEXTURE": true,
+        "CIRCLE_CUT": true
+      },
+      "props": {
+        "radius": 0.5,
+        "blur": 0.02,
+        "ratio": 1
+      }
+    }
+  }
+}
