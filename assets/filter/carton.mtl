@@ -1,0 +1,18 @@
+{
+  "__type__": "cc.Material",
+  "_name": "carton",
+  "_objFlags": 0,
+  "_native": "",
+  "_effectAsset": {
+    "__uuid__": "f33fe988-ae4c-4825-8462-562a543c191d"
+  },
+  "_techniqueIndex": 0,
+  "_techniqueData": {
+    "0": {
+      "defines": {
+        "USE_TEXTURE": true,
+        "CARTON": true
+      }
+    }
+  }
+}

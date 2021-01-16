@@ -1,0 +1,18 @@
+{
+  "__type__": "cc.Material",
+  "_name": "brown",
+  "_objFlags": 0,
+  "_native": "",
+  "_effectAsset": {
+    "__uuid__": "b96f6617-cf8e-49f2-a24f-2fd1b1e03f60"
+  },
+  "_techniqueIndex": 0,
+  "_techniqueData": {
+    "0": {
+      "defines": {
+        "USE_TEXTURE": true,
+        "BROWN": true
+      }
+    }
+  }
+}
