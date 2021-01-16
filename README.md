@@ -1,2 +1,2 @@
 # cocos-shader
-cocos2.4.3 shader
+项目使用cocos版本：2.4.3
