@@ -1,0 +1,21 @@
+{
+  "__type__": "cc.Material",
+  "_name": "dissovle",
+  "_objFlags": 0,
+  "_native": "",
+  "_effectAsset": {
+    "__uuid__": "a7d57a20-2e76-4a47-887e-5726bb361c3f"
+  },
+  "_techniqueIndex": 0,
+  "_techniqueData": {
+    "0": {
+      "defines": {
+        "USE_TEXTURE": true,
+        "DISSOVLE": true
+      },
+      "props": {
+        "dissovle": 0
+      }
+    }
+  }
+}
