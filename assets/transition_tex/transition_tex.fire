@@ -991,7 +991,7 @@
     },
     "component": "",
     "_componentId": "57fe0GeHO5Lnb+J1AsQGG4W",
-    "handler": "transition",
+    "handler": "clickTransition",
     "customEventData": ""
   },
   {
