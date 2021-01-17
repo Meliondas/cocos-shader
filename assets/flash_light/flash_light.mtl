@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.Material",
+  "_name": "sepecular_gloss",
+  "_objFlags": 0,
+  "_native": "",
+  "_effectAsset": {
+    "__uuid__": "0fc1cd75-d1d8-4720-b0bb-207f144cff7c"
+  },
+  "_techniqueIndex": 0,
+  "_techniqueData": {
+    "0": {
+      "defines": {
+        "USE_TEXTURE": true,
+        "USE_GLOSS": true
+      },
+      "props": {
+        "width": 0.1,
+        "strength": 1.2
+      }
+    }
+  }
+}
