@@ -1,0 +1,21 @@
+{
+  "__type__": "cc.Material",
+  "_name": "outline",
+  "_objFlags": 0,
+  "_native": "",
+  "_effectAsset": {
+    "__uuid__": "3977a448-f197-48ab-a518-b6b936853267"
+  },
+  "_techniqueIndex": 0,
+  "_techniqueData": {
+    "0": {
+      "defines": {
+        "USE_TEXTURE": true,
+        "USE_OUTLINE": true
+      },
+      "props": {
+        "outlineWidth": 0.01
+      }
+    }
+  }
+}
