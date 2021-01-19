@@ -1,0 +1,42 @@
+{
+  "__type__": "cc.Material",
+  "_name": "heart_rain",
+  "_objFlags": 0,
+  "_native": "",
+  "_effectAsset": {
+    "__uuid__": "1735ba7b-44f4-4623-af40-8f7f01be732c"
+  },
+  "_techniqueIndex": 0,
+  "_techniqueData": {
+    "0": {
+      "defines": {
+        "USE_TEXTURE": true,
+        "USE_HEART_RAIN": true,
+        "HAS_HEART": true,
+        "CHEAP_NORMALS": false,
+        "USE_POST_PROCESSING": true
+      },
+      "props": {
+        "iResolution": {
+          "__type__": "cc.Vec4",
+          "x": 1920,
+          "y": 1080,
+          "z": 0,
+          "w": 0
+        },
+        "texSize": {
+          "__type__": "cc.Vec2",
+          "x": 1920,
+          "y": 1080
+        },
+        "color": {
+          "__type__": "cc.Color",
+          "r": 255,
+          "g": 255,
+          "b": 255,
+          "a": 255
+        }
+      }
+    }
+  }
+}
