@@ -55,6 +55,8 @@ CCProgram vs %{
 
 
 CCProgram fs %{
+  #extension GL_OES_standard_derivatives : enable
+
   precision highp float;
   
   #include <alpha-test>
@@ -225,15 +227,14 @@ CCProgram fs %{
     
     
     vec2 c = Drops(uv, t, staticDrops, layer1, layer2);
-    // dFdx 不知道是什么 暂时注释
-    // #if CHEAP_NORMALS
-    // 	vec2 n = vec2(dFdx(c.x), dFdy(c.x));// cheap normals (3x cheaper, but 2 times shittier ;))
-    // #else
+    #if CHEAP_NORMALS
+    	vec2 n = vec2(dFdx(c.x), dFdy(c.x));// cheap normals (3x cheaper, but 2 times shittier ;))
+    #else
     	vec2 e = vec2(.001, 0.);
     	float cx = Drops(uv+e, t, staticDrops, layer1, layer2).x;
     	float cy = Drops(uv+e.yx, t, staticDrops, layer1, layer2).x;
     	vec2 n = vec2(cx-c.x, cy-c.x);		// expensive normals
-    // #endif
+    #endif
     
     
     #if HAS_HEART
