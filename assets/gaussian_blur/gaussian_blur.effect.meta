@@ -1,0 +1,17 @@
+{
+  "ver": "1.0.25",
+  "uuid": "0ac00631-aaa3-4365-b982-bc1e91f5c5c8",
+  "compiledShaders": [
+    {
+      "glsl1": {
+        "vert": "\nprecision highp float;\nuniform mat4 cc_matViewProj;\nuniform mat4 cc_matWorld;\nattribute vec3 a_position;\nattribute vec4 a_color;\nvarying vec4 v_color;\n#if USE_TEXTURE\nattribute vec2 a_uv0;\nvarying vec2 v_uv0;\n#endif\nvoid main () {\n  vec4 pos = vec4(a_position, 1);\n  #if CC_USE_MODEL\n  pos = cc_matViewProj * cc_matWorld * pos;\n  #else\n  pos = cc_matViewProj * pos;\n  #endif\n  #if USE_TEXTURE\n  v_uv0 = a_uv0;\n  #endif\n  v_color = a_color;\n  gl_Position = pos;\n}",
+        "frag": "\nprecision highp float;\n#if USE_ALPHA_TEST\n#endif\nvarying vec4 v_color;\n#if USE_TEXTURE\nvarying vec2 v_uv0;\nuniform sampler2D texture;\n#endif\nconst float BLUR_RADIUS = 20.0;\nuniform vec2 texSize;\nvec4 getBlurColor(vec2 pos) {\n  vec4 color = vec4(0);\n  float sum = 0.0;\n  for(float r = -BLUR_RADIUS; r <= BLUR_RADIUS; r++) {\n    for(float c = -BLUR_RADIUS; c <= BLUR_RADIUS; c++) {\n      vec2 target = pos+vec2(r/texSize.x, c/texSize.y);\n      float weight = (BLUR_RADIUS-abs(r))*(BLUR_RADIUS-abs(c));\n      color += texture2D(texture, target)*weight;\n      sum += weight;\n    }\n  }\n  color /= sum;\n  return color;\n}\nvoid main () {\n  vec4 color = getBlurColor(v_uv0);\n  color.a = v_color.a;\n  gl_FragColor = color;\n}"
+      },
+      "glsl3": {
+        "vert": "\nprecision highp float;\nuniform CCGlobal {\n  mat4 cc_matView;\n  mat4 cc_matViewInv;\n  mat4 cc_matProj;\n  mat4 cc_matProjInv;\n  mat4 cc_matViewProj;\n  mat4 cc_matViewProjInv;\n  vec4 cc_cameraPos;\n  vec4 cc_time;\n  mediump vec4 cc_screenSize;\n  mediump vec4 cc_screenScale;\n};\nuniform CCLocal {\n  mat4 cc_matWorld;\n  mat4 cc_matWorldIT;\n};\nin vec3 a_position;\nin vec4 a_color;\nout vec4 v_color;\n#if USE_TEXTURE\nin vec2 a_uv0;\nout vec2 v_uv0;\n#endif\nvoid main () {\n  vec4 pos = vec4(a_position, 1);\n  #if CC_USE_MODEL\n  pos = cc_matViewProj * cc_matWorld * pos;\n  #else\n  pos = cc_matViewProj * pos;\n  #endif\n  #if USE_TEXTURE\n  v_uv0 = a_uv0;\n  #endif\n  v_color = a_color;\n  gl_Position = pos;\n}",
+        "frag": "\nprecision highp float;\n#if USE_ALPHA_TEST\n  uniform ALPHA_TEST {\n    float alphaThreshold;\n  };\n#endif\nin vec4 v_color;\n#if USE_TEXTURE\nin vec2 v_uv0;\nuniform sampler2D texture;\n#endif\nconst float BLUR_RADIUS = 20.0;\nuniform GassuianBlur {\n  vec2 texSize;\n};\nvec4 getBlurColor(vec2 pos) {\n  vec4 color = vec4(0);\n  float sum = 0.0;\n  for(float r = -BLUR_RADIUS; r <= BLUR_RADIUS; r++) {\n    for(float c = -BLUR_RADIUS; c <= BLUR_RADIUS; c++) {\n      vec2 target = pos+vec2(r/texSize.x, c/texSize.y);\n      float weight = (BLUR_RADIUS-abs(r))*(BLUR_RADIUS-abs(c));\n      color += texture2D(texture, target)*weight;\n      sum += weight;\n    }\n  }\n  color /= sum;\n  return color;\n}\nvoid main () {\n  vec4 color = getBlurColor(v_uv0);\n  color.a = v_color.a;\n  gl_FragColor = color;\n}"
+      }
+    }
+  ],
+  "subMetas": {}
+}
