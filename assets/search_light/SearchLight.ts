@@ -10,6 +10,10 @@ export class SearchLight extends cc.Component {
 
     public start(): void {
         this._material = this.sprite.getMaterial(0);
+        const canvas = cc.Canvas.instance;
+        const width = canvas.node.width;
+        const height = canvas.node.height;
+        this._material.setProperty('u_resolution', new cc.Vec2(width, height));
     }
 
     public onEnable(): void {

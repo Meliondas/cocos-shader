@@ -13,6 +13,7 @@ CCEffect %{
       properties:
         texture: { value: white }
         alphaThreshold: { value: 0.5 }
+        u_tex_size: { value: [1920, 1080], tooltip: "分辨率" }
         u_resolution: { value: [1920, 1080], tooltip: "分辨率" }
         u_mouse: { value: [960, 540], tooltip: "鼠标" }
         u_radius: { value: [100, 100], tooltip: "半径" }
@@ -68,6 +69,7 @@ CCProgram fs %{
   #endif
 
   uniform SearchLight {
+    vec2 u_tex_size;
     vec2 u_resolution;
     vec2 u_mouse;
     vec2 u_radius;
@@ -76,7 +78,7 @@ CCProgram fs %{
   void main () {
     vec2 mouse = vec2(u_mouse.x, u_resolution.y-u_mouse.y);
     vec4 color = texture2D(texture, v_uv0);
-    vec2 dir = v_uv0*u_resolution.xy-mouse.xy;
+    vec2 dir = (v_uv0*u_tex_size.xy + (u_resolution.xy-u_tex_size.xy)/2.0)-mouse.xy;
     float r = dot(dir, dir)/dot(u_radius, u_radius);
     color *= 1.08-r;
     gl_FragColor = vec4(color.rgb, 0.75);
