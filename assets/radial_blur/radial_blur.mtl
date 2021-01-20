@@ -1,0 +1,20 @@
+{
+  "__type__": "cc.Material",
+  "_name": "radial_blur",
+  "_objFlags": 0,
+  "_native": "",
+  "_effectAsset": {
+    "__uuid__": "4a35c3c8-8b39-40be-872e-d3080352a117"
+  },
+  "_techniqueIndex": 0,
+  "_techniqueData": {
+    "0": {
+      "defines": {
+        "USE_TEXTURE": true
+      },
+      "props": {
+        "u_strength": 0.125
+      }
+    }
+  }
+}
