@@ -1,0 +1,36 @@
+{
+  "__type__": "cc.Material",
+  "_name": "noise_dissolve",
+  "_objFlags": 0,
+  "_native": "",
+  "_effectAsset": {
+    "__uuid__": "a64e8a3c-3e60-4987-a0e8-7fb60880642c"
+  },
+  "_techniqueIndex": 0,
+  "_techniqueData": {
+    "0": {
+      "defines": {
+        "USE_TEXTURE": true
+      },
+      "props": {
+        "noiseThreshold": 0,
+        "noiseTexSize": {
+          "__type__": "cc.Vec2",
+          "x": 1024,
+          "y": 1024
+        },
+        "texSize": {
+          "__type__": "cc.Vec2",
+          "x": 700,
+          "y": 700
+        },
+        "noiseTexture": {
+          "__uuid__": "28cd8de5-03b3-40fb-b78f-48bc3d192c20"
+        },
+        "texture": {
+          "__uuid__": "74c44a5f-6df6-4b9c-a9fa-55e0509fa783"
+        }
+      }
+    }
+  }
+}
