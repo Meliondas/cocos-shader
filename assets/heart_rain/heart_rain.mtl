@@ -11,7 +11,6 @@
     "0": {
       "defines": {
         "USE_TEXTURE": true,
-        "USE_HEART_RAIN": true,
         "HAS_HEART": true,
         "CHEAP_NORMALS": true,
         "USE_POST_PROCESSING": true

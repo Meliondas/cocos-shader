@@ -13,7 +13,6 @@
         "USE_TEXTURE": true
       },
       "props": {
-        "noiseThreshold": 0,
         "noiseTexSize": {
           "__type__": "cc.Vec2",
           "x": 1024,
