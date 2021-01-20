@@ -15,8 +15,8 @@ export class DissovleTest extends cc.Component {
 
     private _dir: number = 1;
 
-    private clickSwitch(): void {
-        this._switch = !this._switch;
+    private clickSwitch(toggle: cc.Toggle): void {
+        this._switch = toggle.isChecked;
     }
 
     public update(dt: number): void {

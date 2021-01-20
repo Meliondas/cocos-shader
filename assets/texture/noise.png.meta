@@ -11,7 +11,7 @@
   "height": 1024,
   "platformSettings": {},
   "subMetas": {
-    "burn_noise": {
+    "noise": {
       "ver": "1.0.4",
       "uuid": "ea407d4a-ad72-4b40-ab60-5514e2229704",
       "rawTextureUuid": "28cd8de5-03b3-40fb-b78f-48bc3d192c20",
